@@ -12,11 +12,10 @@ function LimitedTimeOffer() {
 							Special Edition
 						</h1>
 						<p className="text-white font-light w-1/2 leading-loose mb-4">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-							tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+							The winter is cold, be the first to buy this winter set.
 						</p>
 						<h3 className="text-lg text-white font-bold mb-9">
-							Buy This T-shirt At 20% Discount, Use The Code OFF20
+							Buy This set At 20% Discount, Use The Code WS2024
 						</h3>
 						<button className="px-7 py-3 uppercase text-sm text-gray-600 font-bold bg-white">
 							shop now

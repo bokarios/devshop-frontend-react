@@ -9,7 +9,7 @@ body {
 }
 
 .hero {
-	background-image: url('/img/hero-bg.jpg');
+	background-image: url('/img/winter-girl-bg.jpg');
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body {
 }
 
 .limited-offer {
-	background-image: url('/img/limited-time-offer-bg.jpg');
+	background-image: url('/img/snow-blowing-girl-bg.jpg');
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
