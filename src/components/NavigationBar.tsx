@@ -5,6 +5,29 @@ import { UserIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
 function NavigationBar() {
 	let location = useLocation()
 
+	const links = [
+		{
+			id: 1,
+			name: 'store',
+			route: '/store',
+		},
+		{
+			id: 2,
+			name: 'men',
+			route: '/men',
+		},
+		{
+			id: 3,
+			name: 'women',
+			route: '/women',
+		},
+		{
+			id: 4,
+			name: 'accessories',
+			route: '/accessories',
+		},
+	]
+
 	return (
 		<nav
 			className={`w-full h-28 ${
@@ -25,38 +48,17 @@ function NavigationBar() {
 							location.pathname === '/' ? 'text-gray-50' : 'text-gray-800'
 						}`}
 					>
-						<a
-							href="#!"
-							className={`uppercase font-normal transition-colors duration-300 ease ${
-								location.pathname !== '/' && 'hover:text-[#0084d6]'
-							}`}
-						>
-							everything
-						</a>
-						<a
-							href="#!"
-							className={`uppercase font-normal transition-colors duration-300 ease ${
-								location.pathname !== '/' && 'hover:text-[#0084d6]'
-							}`}
-						>
-							women
-						</a>
-						<a
-							href="#!"
-							className={`uppercase font-normal transition-colors duration-300 ease ${
-								location.pathname !== '/' && 'hover:text-[#0084d6]'
-							}`}
-						>
-							men
-						</a>
-						<a
-							href="#!"
-							className={`uppercase font-normal transition-colors duration-300 ease ${
-								location.pathname !== '/' && 'hover:text-[#0084d6]'
-							}`}
-						>
-							accessories
-						</a>
+						{links.map((link) => (
+							<Link
+								to={link.route}
+								key={link.id}
+								className={`uppercase font-normal transition-colors duration-300 ease ${
+									location.pathname !== '/' && 'hover:text-[#0084d6]'
+								}`}
+							>
+								{link.name}
+							</Link>
+						))}
 					</div>
 				</div>
 				<div
@@ -65,22 +67,22 @@ function NavigationBar() {
 					}`}
 				>
 					<div className="flex items-center gap-6">
-						<a
-							href="#!"
+						<Link
+							to="/about"
 							className={`uppercase font-medium transition-colors duration-300 ease ${
 								location.pathname !== '/' && 'hover:text-[#0084d6]'
 							}`}
 						>
 							about
-						</a>
-						<a
-							href="#!"
+						</Link>
+						<Link
+							to="/contact"
 							className={`uppercase font-medium transition-colors duration-300 ease ${
 								location.pathname !== '/' && 'hover:text-[#0084d6]'
 							}`}
 						>
 							contact us
-						</a>
+						</Link>
 					</div>
 					<div className="flex items-center gap-6">
 						<button
