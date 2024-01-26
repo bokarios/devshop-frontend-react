@@ -7,9 +7,17 @@ import {
 	ChevronRightIcon,
 	ChevronUpDownIcon,
 } from '@heroicons/react/24/outline'
+import PriceFilter from '../components/PriceFilter'
+import ListComponent from '../components/ListComponent'
 
 const StoreView = () => {
 	const [products, setProducts] = useState<ProductType[]>([])
+
+	const categories = [
+		{ id: 1, name: 'Accessories', productsCount: 7 },
+		{ id: 2, name: 'Men', productsCount: 14 },
+		{ id: 3, name: 'Women', productsCount: 17 },
+	]
 
 	async function getProducts() {
 		const res = await repositories.product.allProducts()
@@ -31,8 +39,8 @@ const StoreView = () => {
 		<div className="w-full bg-gray-100">
 			<div className="w-full max-w-[1440px] mx-auto lg:px-16 xl:px-0 py-20">
 				<div className="flex gap-14">
-					<div className="w-[500px]">
-						<div className="flex gap-2">
+					<div className="w-[375px]">
+						<div className="flex gap-2 mb-10">
 							<input
 								type="text"
 								className="w-full h-12 px-3 placeholder-gray-500 text-lg focus:outline-[#0084d6]"
@@ -45,6 +53,10 @@ const StoreView = () => {
 								/>
 							</button>
 						</div>
+						<div className="mb-12">
+							<PriceFilter />
+						</div>
+						<ListComponent title="Categories" items={categories} />
 					</div>
 					<div className="w-full bg-white px-28 py-16">
 						<div className="flex items-center gap-1 mb-8">

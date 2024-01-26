@@ -1,9 +1,11 @@
-import { Link, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import DevLogo from './DevLogo'
 import { UserIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
 
 function NavigationBar() {
 	let location = useLocation()
+
+	const trans = ['/', '/contact', '/about']
 
 	const links = [
 		{
@@ -31,63 +33,71 @@ function NavigationBar() {
 	return (
 		<nav
 			className={`w-full h-28 ${
-				location.pathname === '/'
+				trans.includes(location.pathname)
 					? 'bg-[#00000014] absolute left-0 top-0 z-50'
 					: 'bg-white text-gray-800 border-b border-b-gray-200'
 			}`}
 		>
 			<div className="w-full h-full flex justify-between items-center px-10">
 				<div className="flex items-center h-full gap-14">
-					<Link to="/">
+					<NavLink to="/">
 						<div className="w-20">
-							<DevLogo dark={location.pathname !== '/'} />
+							<DevLogo dark={!trans.includes(location.pathname)} />
 						</div>
-					</Link>
+					</NavLink>
 					<div
 						className={`flex items-center gap-6 ${
-							location.pathname === '/' ? 'text-gray-50' : 'text-gray-800'
+							trans.includes(location.pathname)
+								? 'text-gray-50'
+								: 'text-gray-800'
 						}`}
 					>
 						{links.map((link) => (
-							<Link
+							<NavLink
 								to={link.route}
 								key={link.id}
-								className={`uppercase font-normal transition-colors duration-300 ease ${
-									location.pathname !== '/' && 'hover:text-[#0084d6]'
-								}`}
+								className={({ isActive }) =>
+									`uppercase font-normal transition-colors duration-300 ease ${
+										!trans.includes(location.pathname) && 'hover:text-[#0084d6]'
+									} ${isActive && 'text-brand-blue'}`
+								}
 							>
 								{link.name}
-							</Link>
+							</NavLink>
 						))}
 					</div>
 				</div>
 				<div
 					className={`flex items-center gap-8 ${
-						location.pathname === '/' ? 'text-gray-50' : 'text-gray-800'
+						trans.includes(location.pathname) ? 'text-gray-50' : 'text-gray-800'
 					}`}
 				>
 					<div className="flex items-center gap-6">
-						<Link
+						<NavLink
 							to="/about"
-							className={`uppercase font-medium transition-colors duration-300 ease ${
-								location.pathname !== '/' && 'hover:text-[#0084d6]'
-							}`}
+							className={({ isActive }) =>
+								`uppercase font-medium transition-colors duration-300 ease ${
+									!trans.includes(location.pathname) && 'hover:text-[#0084d6]'
+								} ${isActive && 'text-brand-blue'}`
+							}
 						>
 							about
-						</Link>
-						<Link
+						</NavLink>
+						<NavLink
 							to="/contact"
-							className={`uppercase font-medium transition-colors duration-300 ease ${
-								location.pathname !== '/' && 'hover:text-[#0084d6]'
-							}`}
+							className={({ isActive }) =>
+								`uppercase font-medium transition-colors duration-300 ease ${
+									!trans.includes(location.pathname) && 'hover:text-[#0084d6]'
+								} ${isActive && 'text-brand-blue'}`
+							}
 						>
 							contact us
-						</Link>
+						</NavLink>
 					</div>
 					<div className="flex items-center gap-6">
 						<button
 							className={`flex gap-1 group ${
-								location.pathname === '/'
+								trans.includes(location.pathname)
 									? 'text-gray-50'
 									: 'text-gray-800 hover:text-[#0084f6]'
 							}`}
@@ -97,7 +107,7 @@ function NavigationBar() {
 								<ShoppingBagIcon className="w-5 h-5" />
 								<div
 									className={`absolute -top-1.5 -right-2 w-4 h-4 rounded-full flex justify-center items-center ${
-										location.pathname === '/'
+										trans.includes(location.pathname)
 											? 'bg-white text-gray-800'
 											: 'bg-gray-800 text-gray-50 group-hover:bg-[#0084f6]'
 									}`}
@@ -109,7 +119,7 @@ function NavigationBar() {
 						<button>
 							<UserIcon
 								className={`w-5 h-5 ${
-									location.pathname === '/'
+									trans.includes(location.pathname)
 										? 'text-gray-50'
 										: 'text-gray-800 hover:text-[#0084f6]'
 								}`}
