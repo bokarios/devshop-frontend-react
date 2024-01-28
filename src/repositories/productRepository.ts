@@ -1,17 +1,23 @@
-import apiClient from '../plugins/apiClient'
+import apiClient from "../plugins/apiClient"
 
 const api = {
-	allProducts() {
-		return apiClient.get('products')
-	},
+  allProducts(sort: string) {
+    const order = sort === "new first" ? "asc" : "desc"
+    return apiClient.get(`products?sort=${order}`)
+  },
 
-	oneProduct(id: number) {
-		return apiClient.get('products/' + id)
-	},
+  categoryProducts(sort: string, category: string) {
+    const order = sort === "new first" ? "asc" : "desc"
+    return apiClient.get(`products/category/${category}?sort=${order}`)
+  },
 
-	featuredAPi() {
-		return apiClient.get('products?featured=1')
-	},
+  oneProduct(id: number) {
+    return apiClient.get("products/" + id)
+  },
+
+  featuredAPi() {
+    return apiClient.get("products?limit=5")
+  },
 }
 
 export default api

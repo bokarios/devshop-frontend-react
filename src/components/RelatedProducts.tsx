@@ -10,7 +10,7 @@ const RelatedProducts = () => {
 		const res = await repositories.product.featuredAPi()
 
 		if (res.status === 200) {
-			setProducts(res.data.products)
+			setProducts(res.data)
 		}
 	}
 

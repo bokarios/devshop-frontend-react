@@ -9,7 +9,7 @@ import {
 // import PriceFilter from "../components/PriceFilter"
 import ListComponent from "../components/ListComponent"
 
-const WomenView = () => {
+const ElectronicsView = () => {
   const [products, setProducts] = useState<ProductType[]>([])
   const [currentPage, setCurrentPage] = useState(1)
   const [perPage, setPerPage] = useState(6)
@@ -24,10 +24,7 @@ const WomenView = () => {
   ]
 
   async function getProducts() {
-    const res = await repositories.product.categoryProducts(
-      sort,
-      "women's clothing",
-    )
+    const res = await repositories.product.categoryProducts(sort, "electronics")
 
     if (res.status === 200) {
       setProducts(res.data)
@@ -95,7 +92,7 @@ const WomenView = () => {
             <div className="mb-8 flex items-center gap-1">
               <h6 className="font-normal text-gray-500">Home</h6>
               <h6 className="font-normal text-gray-500">/</h6>
-              <h6 className="font-normal text-gray-500">Women's Clothing</h6>
+              <h6 className="font-normal text-gray-500">Electronics</h6>
             </div>
             <div className="mb-16 flex items-center justify-between">
               <h4 className="text-lg font-normal text-gray-800">
@@ -143,4 +140,4 @@ const WomenView = () => {
   )
 }
 
-export default WomenView
+export default ElectronicsView
