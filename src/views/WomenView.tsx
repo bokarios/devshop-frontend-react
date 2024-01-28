@@ -11,8 +11,8 @@ import ListComponent from "../components/ListComponent"
 
 const WomenView = () => {
   const [products, setProducts] = useState<ProductType[]>([])
-  const [currentPage, setCurrentPage] = useState(1)
-  const [perPage, setPerPage] = useState(6)
+  const currentPage = 1
+  const perPage = 6
   const [sort, setSort] = useState("new first")
   const [sortDropdown, setSortDropdown] = useState(false)
 
@@ -34,20 +34,20 @@ const WomenView = () => {
     }
   }
 
-  const paginate = (num: number) => {
-    setCurrentPage(num)
-  }
+  // const paginate = (num: number) => {
+  //   setCurrentPage(num)
+  // }
 
-  const prevPage = () => {
-    if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1)
-    }
-  }
-  const nextPage = () => {
-    if (currentPage !== Math.ceil(products.length / perPage)) {
-      setCurrentPage(currentPage + 1)
-    }
-  }
+  // const prevPage = () => {
+  //   if (currentPage !== 1) {
+  //     setCurrentPage(currentPage - 1)
+  //   }
+  // }
+  // const nextPage = () => {
+  //   if (currentPage !== Math.ceil(products.length / perPage)) {
+  //     setCurrentPage(currentPage + 1)
+  //   }
+  // }
 
   const toggleSort = () => {
     setSortDropdown(!sortDropdown)

@@ -13,7 +13,7 @@ import PaginationComponent from "../components/PaginationComponent"
 const StoreView = () => {
   const [products, setProducts] = useState<ProductType[]>([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [perPage, setPerPage] = useState(6)
+  const perPage = 6
   const [sort, setSort] = useState("new first")
   const [sortDropdown, setSortDropdown] = useState(false)
 
