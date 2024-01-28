@@ -13,7 +13,7 @@ function ProductView() {
 		const res = await repositories.product.oneProduct(id)
 
 		if (res.status === 200) {
-			setProduct(res.data.product)
+			setProduct(res.data)
 		}
 	}
 
@@ -31,13 +31,7 @@ function ProductView() {
 		}
 	}
 
-	return (
-		<div className="w-full bg-gray-50">
-			<div className="w-full max-w-[1440px] mx-auto px-28 pt-16 pb-20">
-				{renderDetails()}
-			</div>
-		</div>
-	)
+	return <div className="w-full bg-gray-50">{renderDetails()}</div>
 }
 
 export default ProductView

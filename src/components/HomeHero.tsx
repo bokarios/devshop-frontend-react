@@ -5,10 +5,10 @@ function HomeHero() {
 			<div className="w-full max-w-[1440px] h-full mx-auto flex items-center px-32 relative z-30">
 				<div>
 					<h1 className="text-[66px] text-white font-semibold capitalize leading-[1.20] mb-7">
-						raining offers for <br /> hot summer!
+						Fashion wonders for <br /> cold winter!
 					</h1>
 					<h2 className="text-[26px] text-white font-medium capitalize mb-10">
-						25% off on all products
+						25% off on all winter products
 					</h2>
 					<div className="flex items-center gap-5">
 						<button className="uppercase font-medium px-7 py-3 bg-gray-50">

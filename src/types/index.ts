@@ -1,20 +1,12 @@
-export interface VariationType {
-	id: number
-	color: { name: string; value: string }
-	price: number
-	image: string
-}
-
 export interface ProductType {
 	id: number
-	name: string
-	slug: string
-	shortDesc: string | null
-	desc: string | null
+	title: string
+	description: string
 	category: string
 	image: string
 	price: number
-	discount: number
-	rating: number
-	variations: [] | VariationType[]
+	rating: {
+		rate: number
+		count: number
+	}
 }

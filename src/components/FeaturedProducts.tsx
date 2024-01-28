@@ -11,7 +11,7 @@ const FeaturedProducts = () => {
 		const res = await repositories.product.featuredAPi()
 
 		if (res.status === 200) {
-			setProducts(res.data.products)
+			setProducts(res.data)
 		}
 	}
 
@@ -24,7 +24,7 @@ const FeaturedProducts = () => {
 	}, [])
 
 	return (
-		<div className="w-full bg-gray-50 pt-28 pb-24">
+		<div className="w-full pt-28 pb-24">
 			<div className="w-full flex justify-center mb-14">
 				<div className="flex flex-col items-center gap-5">
 					<h1 className="text-[42px] font-semibold capitalize text-black">
