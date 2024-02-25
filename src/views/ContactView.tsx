@@ -5,20 +5,22 @@ const ContactView = () => {
     <>
       <div className="contact relative h-[60vh] w-full bg-gray-500">
         <div className="hero-overlay absolute left-0 top-0 z-20 h-full w-full bg-blue-500 opacity-40"></div>
-        <div className="relative z-30 mx-auto flex h-full w-full max-w-[1440px] items-center justify-center px-32">
-          <h1 className="text-7xl font-bold text-white">Contact Us</h1>
+        <div className="relative z-30 mx-auto flex h-full w-full max-w-[1440px] items-center justify-center px-8 lg:px-32">
+          <h1 className="text-5xl font-bold text-white md:text-7xl">
+            Contact Us
+          </h1>
         </div>
       </div>
       <div className="w-full bg-gray-50 py-16">
-        <div className="mx-auto w-full max-w-[1440px] px-32">
+        <div className="mx-auto w-full max-w-[1440px] px-8 lg:px-32">
           <h4 className="text-center text-sm font-semibold text-black">
             Have any queries?
           </h4>
           <h2 className="relative mb-10 flex justify-center text-center text-3xl font-bold after:absolute after:-bottom-3 after:h-[1px] after:w-10 after:bg-gray-500">
             We're here to help.
           </h2>
-          <div className="mb-20 flex gap-4">
-            <div className="w-3/12 rounded-lg border border-gray-200 bg-white px-5 py-6">
+          <div className="mb-20 flex flex-col gap-4 md:flex-row">
+            <div className="w-full rounded-lg border border-gray-200 bg-white px-5 py-6 md:w-3/12">
               <div className="flex flex-col items-center gap-3 text-center">
                 <h6 className="text-xl font-bold text-black">Sales</h6>
                 <p className="text-sm font-light leading-relaxed text-gray-800">
@@ -33,7 +35,7 @@ const ContactView = () => {
                 </a>
               </div>
             </div>
-            <div className="w-3/12 rounded-lg border border-gray-200 bg-white px-5 py-6">
+            <div className="w-full rounded-lg border border-gray-200 bg-white px-5 py-6 md:w-3/12">
               <div className="flex flex-col items-center gap-3 text-center">
                 <h6 className="text-xl font-bold text-black">Complaints</h6>
                 <p className="text-sm font-light leading-relaxed text-gray-800">
@@ -48,7 +50,7 @@ const ContactView = () => {
                 </a>
               </div>
             </div>
-            <div className="w-3/12 rounded-lg border border-gray-200 bg-white px-5 py-6">
+            <div className="w-full rounded-lg border border-gray-200 bg-white px-5 py-6 md:w-3/12">
               <div className="flex flex-col items-center gap-3 text-center">
                 <h6 className="text-xl font-bold text-black">Returns</h6>
                 <p className="text-sm font-light leading-relaxed text-gray-800">
@@ -64,7 +66,7 @@ const ContactView = () => {
                 </a>
               </div>
             </div>
-            <div className="w-3/12 rounded-lg border border-gray-200 bg-white px-5 py-6">
+            <div className="w-full rounded-lg border border-gray-200 bg-white px-5 py-6 md:w-3/12">
               <div className="flex flex-col items-center gap-3 text-center">
                 <h6 className="text-xl font-bold text-black">Marketing</h6>
                 <p className="text-sm font-light leading-relaxed text-gray-800">
@@ -80,8 +82,8 @@ const ContactView = () => {
               </div>
             </div>
           </div>
-          <div className="mb-20 flex">
-            <div className="w-1/2 pt-16">
+          <div className="mb-20 flex flex-col md:flex-row">
+            <div className="w-full pt-16 md:w-1/2">
               <h6 className="text-sm font-semibold text-gray-800">
                 Don't be a stranger!
               </h6>
@@ -93,8 +95,8 @@ const ContactView = () => {
                 mollitia numquam repellat reiciendis tenetur culpa! Praesentium.
               </p>
             </div>
-            <div className="w-1/2">
-              <div className="w-full rounded-lg border border-gray-300/60 bg-white p-8">
+            <div className="w-full md:w-1/2">
+              <div className="w-full rounded-lg border border-gray-300/60 bg-white p-5 md:p-8">
                 <input
                   type="text"
                   className="mb-5 h-10 w-full rounded-sm border border-gray-300/60 px-3 outline-none"

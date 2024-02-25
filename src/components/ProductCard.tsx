@@ -18,7 +18,7 @@ const ProductCard = ({ product }: PropsType) => {
           <img
             src={product.image}
             alt={product.title}
-            className="aspect-square w-[75%] object-contain saturate-[0.9]"
+            className="aspect-square w-full object-contain saturate-[0.9] md:w-[75%]"
           />
         </figure>
       </Link>

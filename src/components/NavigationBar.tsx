@@ -1,11 +1,11 @@
-import { NavLink, useLocation } from "react-router-dom";
-import DevLogo from "./DevLogo";
-import { UserIcon, ShoppingBagIcon } from "@heroicons/react/24/solid";
+import { NavLink, useLocation } from "react-router-dom"
+import DevLogo from "./DevLogo"
+import { UserIcon, ShoppingBagIcon } from "@heroicons/react/24/solid"
 
 function NavigationBar() {
-  let location = useLocation();
+  let location = useLocation()
 
-  const trans = ["/", "/contact", "/about"];
+  const trans = ["/", "/contact", "/about"]
 
   const links = [
     {
@@ -33,7 +33,7 @@ function NavigationBar() {
       name: "electronics",
       route: "/electronics",
     },
-  ];
+  ]
 
   return (
     <nav
@@ -51,7 +51,7 @@ function NavigationBar() {
             </div>
           </NavLink>
           <div
-            className={`flex items-center gap-6 ${
+            className={`hidden items-center gap-6 lg:flex ${
               trans.includes(location.pathname)
                 ? "text-gray-50"
                 : "text-gray-800"
@@ -73,7 +73,7 @@ function NavigationBar() {
           </div>
         </div>
         <div
-          className={`flex items-center gap-8 ${
+          className={`hidden items-center gap-8 lg:flex ${
             trans.includes(location.pathname) ? "text-gray-50" : "text-gray-800"
           }`}
         >
@@ -134,7 +134,7 @@ function NavigationBar() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
-export default NavigationBar;
+export default NavigationBar
