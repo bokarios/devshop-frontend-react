@@ -44,14 +44,16 @@ const AboutView = () => {
     <>
       <div className="about relative h-[60vh] w-full bg-gray-500">
         <div className="hero-overlay absolute left-0 top-0 z-20 h-full w-full bg-blue-500 opacity-40"></div>
-        <div className="relative z-30 mx-auto flex h-full w-full max-w-[1440px] items-center justify-center px-32">
-          <h1 className="text-7xl font-bold text-white">About Us</h1>
+        <div className="relative z-30 mx-auto flex h-full w-full max-w-[1440px] items-center justify-center px-8 lg:px-32">
+          <h1 className="text-5xl font-bold text-white md:text-7xl">
+            About Us
+          </h1>
         </div>
       </div>
-      <div className="w-full bg-gray-50 p-16">
+      <div className="w-full bg-gray-50 p-8 md:p-16">
         <div className="mx-auto w-full max-w-[1440px]">
-          <div className="flex border border-gray-100 bg-white">
-            <div className="w-1/2 px-16 py-20">
+          <div className="flex flex-col-reverse border border-gray-100 bg-white md:flex-row">
+            <div className="w-full px-8 py-10 md:w-1/2 md:px-16 md:py-20">
               <div className="mb-8 h-1 w-20 bg-brand-blue"></div>
               <h2 className="mb-8 text-4xl font-bold capitalize text-black">
                 who we are
@@ -63,7 +65,7 @@ const AboutView = () => {
                 necessitatibus nam.
               </p>
             </div>
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
               <img
                 src="/img/who-we-are.jpg"
                 alt=""
@@ -74,8 +76,8 @@ const AboutView = () => {
         </div>
       </div>
       <div className="w-full bg-white py-24">
-        <div className="w-max-[1440px] mx-auto w-full px-32">
-          <div className="mx-auto flex w-2/3 flex-col items-center">
+        <div className="w-max-[1440px] mx-auto w-full px-8 lg:px-32">
+          <div className="mx-auto flex w-full flex-col items-center md:w-2/3">
             <div className="mb-6 h-1 w-20 bg-brand-blue"></div>
             <h4 className="mb-4 text-lg font-semibold capitalize text-gray-800">
               a few words about
@@ -113,9 +115,9 @@ const AboutView = () => {
       </div>
       <div className="about relative h-[450px] w-full bg-gray-300/50">
         <div className="flex h-full w-full justify-center">
-          <div className="flex h-full w-1/4 flex-col items-center justify-center bg-gray-100">
+          <div className="flex h-full w-8/12 flex-col items-center justify-center bg-gray-100 md:w-1/4">
             <div className="mb-8 h-1 w-20 bg-brand-blue"></div>
-            <h2 className="mb-10 text-4xl font-bold capitalize text-gray-800">
+            <h2 className="mb-10 text-2xl font-bold capitalize text-gray-800 md:text-4xl">
               follow us
             </h2>
             <div className="flex gap-10">

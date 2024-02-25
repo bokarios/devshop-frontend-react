@@ -70,9 +70,9 @@ const WomenView = () => {
 
   return (
     <div className="w-full bg-gray-100">
-      <div className="mx-auto w-full max-w-[1440px] px-16 py-20">
-        <div className="flex gap-14">
-          <div className="w-[375px]">
+      <div className="mx-auto w-full max-w-[1440px] px-8 py-20 md:px-16">
+        <div className="flex flex-col gap-14 md:flex-row">
+          <div className="w-full md:w-[375px]">
             <div className="mb-10 flex gap-2">
               <input
                 type="text"
@@ -91,7 +91,7 @@ const WomenView = () => {
 						</div> */}
             <ListComponent title="Categories" items={categories} />
           </div>
-          <div className="w-full bg-white px-28 py-16">
+          <div className="w-full bg-white px-8 py-6 md:px-28 md:py-16">
             <div className="mb-8 flex items-center gap-1">
               <h6 className="font-normal text-gray-500">Home</h6>
               <h6 className="font-normal text-gray-500">/</h6>
@@ -103,7 +103,7 @@ const WomenView = () => {
                   indexOfLastProduct > products.length
                     ? products.length
                     : indexOfLastProduct
-                } of ${products.length} products`}
+                } of ${products.length}`}
               </h4>
               <button
                 className="relative flex w-[140px] items-center justify-between text-lg font-normal capitalize text-gray-500"

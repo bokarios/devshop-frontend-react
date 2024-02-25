@@ -14,9 +14,14 @@ function ProductDetails({ product }: PropsType) {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[1440px] px-28 pb-20 pt-16">
-        <div className="flex gap-16">
-          <div className="w-1/2">
+      <div className="mx-auto w-full max-w-[1440px] px-8 pb-20 pt-16 md:px-28">
+        <div className="mb-6 flex gap-2 text-gray-400 md:text-lg">
+          <h5>Home</h5>
+          <h5>/</h5>
+          <h5>{product?.category}</h5>
+        </div>
+        <div className="flex flex-col gap-16 md:flex-row">
+          <div className="w-full md:w-1/2">
             <div className="mb-5 flex aspect-square w-full items-start justify-center overflow-hidden">
               <img
                 src={product.image}
@@ -25,17 +30,14 @@ function ProductDetails({ product }: PropsType) {
               />
             </div>
           </div>
-          <div className="w-1/2 p-2">
-            <div className="mb-6 flex gap-2 text-lg text-gray-400">
-              <h5>Home</h5>
-              <h5>/</h5>
-              <h5>{product?.category}</h5>
-            </div>
-            <h1 className="mb-6 text-4xl text-gray-700">{product?.title}</h1>
+          <div className="w-full md:w-1/2 md:p-2">
+            <h1 className="mb-6 text-3xl text-gray-700 md:text-4xl">
+              {product?.title}
+            </h1>
             <p className="mb-5 font-normal text-gray-500">
               {product.description.slice(0, 40)}
             </p>
-            <h2 className="mb-6 text-2xl font-bold text-gray-900">
+            <h2 className="mb-6 text-xl font-bold text-gray-900 md:text-2xl">
               ${product.price.toFixed(2)}
             </h2>
             <hr className="mb-4 mt-8 bg-gray-400" />
@@ -51,7 +53,7 @@ function ProductDetails({ product }: PropsType) {
                 text="add to cart"
                 textClass="text-sm font-bold text-white"
                 colorClass="bg-brand-blue hover:bg-brand-dark-blue"
-                size="h-12 w-fit"
+                size="h-12 w-full md:w-fit"
                 action={() => alert("Added to cart")}
               />
             </div>
@@ -107,15 +109,15 @@ function ProductDetails({ product }: PropsType) {
                     className="w-full resize-none rounded-sm border border-gray-200 bg-white p-4 focus:outline-none"
                   ></textarea>
                 </div>
-                <div className="mb-4 flex gap-5">
-                  <div className="w-1/2">
+                <div className="mb-4 flex flex-col gap-5 md:flex-row">
+                  <div className="w-full md:w-1/2">
                     <h6 className="mb-1 text-lg text-gray-800">Name *</h6>
                     <input
                       type="text"
                       className="h-10 w-full rounded-sm border border-gray-200 bg-white px-4 focus:outline-none"
                     />
                   </div>
-                  <div className="w-1/2">
+                  <div className="w-full md:w-1/2">
                     <h6 className="mb-1 text-lg text-gray-800">Email *</h6>
                     <input
                       type="email"
@@ -132,7 +134,7 @@ function ProductDetails({ product }: PropsType) {
         </div>
       </div>
       <div className="w-full bg-white">
-        <div className="mx-auto w-full max-w-[1440px] px-28 pb-20 pt-8">
+        <div className="mx-auto w-full max-w-[1440px] px-8 pb-20 pt-8 md:px-28">
           <RelatedProducts />
         </div>
       </div>
