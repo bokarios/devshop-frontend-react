@@ -25,10 +25,14 @@ const StoreView = () => {
   ]
 
   async function getProducts() {
-    const res = await repositories.product.allProducts(sort)
+    try {
+      const res = await repositories.product.allProducts(sort)
 
-    if (res.status === 200) {
-      setProducts(res.data)
+      if (res?.status === 200 && res?.data) {
+        setProducts(res.data)
+      }
+    } catch (error) {
+      console.error("Failed to load products:", error)
     }
   }
 
